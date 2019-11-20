@@ -1,16 +1,18 @@
-﻿using System;
+using System;
 
 namespace AirCoinProject
 {
     public class AirCoin
     {
+        private const int MaxValue =  (int) 2e8;
+        private const int MinValue =  0;
         private int _amount { get; set; }
         public int Amount
         {
             get => _amount;
             set
             {
-                if (value < 0 || value > 2e8)
+                if (value < MinValue || value > MaxValue)
                 {
                     throw new Exception("illegal airCoin amount");
                 }
